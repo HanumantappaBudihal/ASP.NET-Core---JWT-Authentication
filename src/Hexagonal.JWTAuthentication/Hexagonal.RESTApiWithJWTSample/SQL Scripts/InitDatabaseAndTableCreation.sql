@@ -26,3 +26,7 @@ GO
 INSERT INTO Users(FirstName, LastName, UserName, Email, Password) 
 VALUES ('Hanumantappa', 'Budihal', 'Admin', 'admin@abc.com', '$admin@2020')
 GO
+
+-- Run the below command to create the model and dbcontext classes
+-- change server as per your SQL instance
+--Scaffold-DbContext “Server=MSI\LEARNING;Database=Learning;Integrated Security=True” Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
