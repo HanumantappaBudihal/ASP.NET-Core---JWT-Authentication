@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Hexagonal.RESTApiWithJWTSample.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Hexagonal.RESTApiWithJWTSample.Controllers.api
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
@@ -22,7 +24,7 @@ namespace Hexagonal.RESTApiWithJWTSample.Controllers.api
 
         // GET: api/Products
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Products>>> GetProducts(bool? inStock, int? skip, int? take)
+        public async Task<ActionResult<IEnumerable<Product>>> GetProducts(bool? inStock, int? skip, int? take)
         {
             var products = _context.Products.AsQueryable();
 
@@ -46,7 +48,7 @@ namespace Hexagonal.RESTApiWithJWTSample.Controllers.api
 
         // GET: api/Products/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Products>> GetProducts(int id)
+        public async Task<ActionResult<Product>> GetProducts(int id)
         {
             var products = await _context.Products.FindAsync(id);
 
@@ -62,7 +64,7 @@ namespace Hexagonal.RESTApiWithJWTSample.Controllers.api
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProducts(int id, Products products)
+        public async Task<IActionResult> PutProducts(int id, Product products)
         {
             if (id != products.ProductId)
             {
@@ -94,7 +96,7 @@ namespace Hexagonal.RESTApiWithJWTSample.Controllers.api
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Products>> PostProducts(Products products)
+        public async Task<ActionResult<Product>> PostProducts(Product products)
         {
             _context.Products.Add(products);
             await _context.SaveChangesAsync();
@@ -104,7 +106,7 @@ namespace Hexagonal.RESTApiWithJWTSample.Controllers.api
 
         // DELETE: api/Products/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Products>> DeleteProducts(int id)
+        public async Task<ActionResult<Product>> DeleteProducts(int id)
         {
             var products = await _context.Products.FindAsync(id);
             if (products == null)

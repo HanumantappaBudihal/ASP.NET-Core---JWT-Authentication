@@ -11,13 +11,13 @@ namespace Hexagonal.RESTApiWithJWTSample.Models
         {
         }
 
-        public virtual DbSet<Employees> Employees { get; set; }
-        public virtual DbSet<Products> Products { get; set; }
-        public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Employees>(entity =>
+            modelBuilder.Entity<Employee>(entity =>
             {
                 entity.HasKey(e => e.EmployeeId)
                     .HasName("PK__Employee__7AD04FF125B288DB");
@@ -37,7 +37,7 @@ namespace Hexagonal.RESTApiWithJWTSample.Models
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Products>(entity =>
+            modelBuilder.Entity<Product>(entity =>
             {
                 entity.HasKey(e => e.ProductId)
                     .HasName("PK__Products__B40CC6CD1D1C365A");
@@ -58,7 +58,7 @@ namespace Hexagonal.RESTApiWithJWTSample.Models
                 entity.Property(e => e.UnitPrice).HasColumnType("decimal(18, 0)");
             });
 
-            modelBuilder.Entity<Users>(entity =>
+            modelBuilder.Entity<User>(entity =>
             {
                 entity.HasKey(e => e.UserId)
                     .HasName("PK__Users__1788CC4CEA2DE0BD");

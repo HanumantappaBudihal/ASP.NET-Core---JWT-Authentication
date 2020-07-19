@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Hexagonal.RESTApiWithJWTSample.Models
 {
-    public partial class Products
+    public partial class Product
     {
         public int ProductId { get; set; }
         public string Name { get; set; }
