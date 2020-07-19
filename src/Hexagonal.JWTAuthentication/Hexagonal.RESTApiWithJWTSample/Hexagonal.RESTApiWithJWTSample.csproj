@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\api\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
