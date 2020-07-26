@@ -12,9 +12,9 @@ namespace Hexagonal.ApiDocumentationSwagger.Controllers
     {
         // GET api/values
         /// <summary>
-        /// Test the xml comments
+        /// Get() Method : return all the values 
         /// </summary>
-        /// <returns></returns>
+        /// <returns> List of strings</returns>
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
@@ -22,24 +22,42 @@ namespace Hexagonal.ApiDocumentationSwagger.Controllers
         }
 
         // GET api/values/5
+        /// <summary>
+        /// Return the sting with parameter id
+        /// </summary>
+        /// <param name="id">item id</param>
+        /// <returns>return string with id value</returns>
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
+            return "value " + id; ;
         }
 
         // POST api/values
+        /// <summary>
+        ///Add the item in list
+        /// </summary>
+        /// <param name="value">string value</param>
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
         // PUT api/values/5
+        /// <summary>
+        /// Update the values 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="value"></param>
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
+        /// <summary>
+        /// Remove the string value from the list
+        /// </summary>
+        /// <param name="id">string value</param>
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)

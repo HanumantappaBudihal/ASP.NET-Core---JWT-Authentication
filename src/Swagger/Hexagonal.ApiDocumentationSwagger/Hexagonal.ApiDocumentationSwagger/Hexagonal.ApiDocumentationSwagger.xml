@@ -6,9 +6,35 @@
     <members>
         <member name="M:Hexagonal.ApiDocumentationSwagger.Controllers.ValuesController.Get">
             <summary>
-            Test the xml comments
+            Get() Method : return all the values 
             </summary>
-            <returns></returns>
+            <returns> List of strings</returns>
+        </member>
+        <member name="M:Hexagonal.ApiDocumentationSwagger.Controllers.ValuesController.Get(System.Int32)">
+            <summary>
+            Return the sting with parameter id
+            </summary>
+            <param name="id">item id</param>
+            <returns>return string with id value</returns>
+        </member>
+        <member name="M:Hexagonal.ApiDocumentationSwagger.Controllers.ValuesController.Post(System.String)">
+             <summary>
+            Add the item in list
+             </summary>
+             <param name="value">string value</param>
+        </member>
+        <member name="M:Hexagonal.ApiDocumentationSwagger.Controllers.ValuesController.Put(System.Int32,System.String)">
+            <summary>
+            Update the values 
+            </summary>
+            <param name="id"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Hexagonal.ApiDocumentationSwagger.Controllers.ValuesController.Delete(System.Int32)">
+            <summary>
+            Remove the string value from the list
+            </summary>
+            <param name="id">string value</param>
         </member>
     </members>
 </doc>
