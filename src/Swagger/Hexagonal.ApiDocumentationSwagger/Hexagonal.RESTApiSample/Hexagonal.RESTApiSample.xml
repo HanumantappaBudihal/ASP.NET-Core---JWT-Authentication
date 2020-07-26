@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hexagonal.RESTApiSample</name>
+    </assembly>
+    <members>
+        <member name="M:Hexagonal.RESTApiSample.Controllers.api.EmployeesController.GetEmployees">
+            <summary>
+            Get all employees
+            </summary>
+            <remarks>
+            It's a get method, just return all employee details in database
+            
+            </remarks>       
+            <returns>returns all employee items </returns>
+            <response code="201">Returns the all employees</response>
+            <response code="400">If the item is null</response>
+        </member>
+        <member name="M:Hexagonal.RESTApiSample.Controllers.api.EmployeesController.GetEmployees(System.Int32)">
+            <summary>
+            Find the employee details by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hexagonal.RESTApiSample.Controllers.api.EmployeesController.PostEmployees(Hexagonal.RESTApiSample.Models.Employees)">
+            <summary>
+            Creates a employee.
+            </summary>
+            <remarks>
+            Note that the Id is a auto generated and it is an integer.
+             
+                POST: api/Employees
+                {
+                "Id": 0,
+                "FirstName": "string",
+                "LastName": "string",
+                "Gender": "string",
+                "Salary": 0
+                }
+            
+            </remarks>
+            <param name="employee"></param>
+            <returns>New Created employee </returns>
+            <response code="201">Returns the newly created item</response>
+            <response code="400">If the item is null</response>
+        </member>
+    </members>
+</doc>
