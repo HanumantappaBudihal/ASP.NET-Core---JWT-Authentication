@@ -51,14 +51,18 @@ namespace Hexagonal.ApiDocumentationSwagger
             {
                 app.UseHsts();
             }
-
+            app.UseStaticFiles();
             app.UseHttpsRedirection();
             app.UseMvc();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.DocumentTitle = "Test";
+                c.InjectStylesheet("/swagger/ui/custom.css");
+
             });
+            // app.UseSwaggerUI().UseWelcomePage();
         }
 
         private string GetXmlCommentsPath()
